@@ -181,8 +181,8 @@ for i in years:
 #preparing the arrays to be put into a data frame
 CAPEX_list = list(zip(years, CAPEXpv_array, CAPEXbess_array, total_capex, REVpv_array, REVbess_array, totalrev_array, opexpv_array, opexbess_array, totalopex_array, solar_income_array, bess_income_array, solar_tax_total, bess_tax_total, solar_income_after_tax_array, bess_income_after_tax_array, total_income_after_tax_array, NCF_solar_array, NCF_bess_array, PCF_array))
 pd.set_option("display.max_rows", None, "display.max_columns", None) #so I can see the entire data frame in sublimes output
-df = pd.DataFrame(CAPEX_list, columns = ['year', 'pv capex', 'bess capex', 'total capex', 'PV Revenue', 'bess revenue', 'total revenue','opex PV','opex BESS', 'total OPEX', 'solar income', 'bess income', 'solar tax total', 'bess tax total', 'solar income after tax', 'bess income after tax', 'total income after tax', 'solar ncf', 'bess ncf', 'pcf']) #colunm names for the data frame
+df = pd.DataFrame(CAPEX_list, columns = ['year', 'pv capex', 'bess capex', 'total capex', 'PV Revenue', 'bess revenue', 'total revenue','opex PV','opex BESS', 'total OPEX', 'solar income', 'BESS income', 'solar tax total', 'bess tax total', 'solar income after tax', 'bess income after tax', 'total income after tax', 'solar ncf', 'bess ncf', 'pcf']) #colunm names for the data frame
 print(df)
 
 irr_df = round(np.irr(PCF_array),2) #calculating the IRR  from the projected cash flow colunm in the df
-print(irr_df)
+print("IRR Calculation:", irr_df)
